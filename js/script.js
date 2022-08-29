@@ -44,6 +44,40 @@ const titleClickHandler = function(event) {
 
   targetArticle.classList.add('active');
 
+  const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+  
+  function generateTitleLinks() {
+
+    /* remove contents of titleList */
+    
+    const titleList = document.querySelector(optTitleListSelector);
+    
+    function clearTitleList(){
+      document.querySelector(optTitleListSelector).innerHTML = '';
+    }
+
+    clearTitleList();
+    
+    console.log(optTitleListSelector)
+    
+
+    /* for each article */
+
+      /* get the article id */
+
+      /* find the title element */
+
+      /* get the title from the title element */
+
+      /* create HTML of the link */
+
+      /* insert link into titleList */
+  }
+
+  generateTitleLinks();
+  
 }
 
 const links = document.querySelectorAll('.titles a');
