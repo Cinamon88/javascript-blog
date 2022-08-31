@@ -102,15 +102,33 @@ for (let link of links){
 }
 
 function generateTags(){
+
   /* find all articles */
+
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log('articles', articles);
 
   /* START LOOP: for every article: */
 
+  for (let article of articles){
+
     /* find tags wrapper */
+
+    const titleList = article.querySelector(optArticleTagsSelector);
+    console.log(titleList);
 
     /* make html variable with empty string */
 
+    let html = '';
+    console.log(html);
+
     /* get tags from data-tags attribute */
+
+    const articleSelector = article.getAttribute('data-tags');
+    console.log(articleSelector);
+
+    const articleTags = 'data-tags';
+    console.log(articleTags);
 
     /* split tags into array */
 
@@ -125,6 +143,7 @@ function generateTags(){
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+  }
 }
 
 generateTags();
