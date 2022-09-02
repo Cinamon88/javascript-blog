@@ -132,11 +132,24 @@ function generateTags(){
 
     /* split tags into array */
 
+    const articleTagsArray = articleTags.split(' ');
+    console.log(articleTagsArray);
+
     /* START LOOP: for each tag */
+
+    for(let tag of articleTagsArray){
+      console.log('tag', tag);
 
       /* generate HTML of the link */
 
+      const linkHTML = '<ul><a href="#tag' + optArticleTagsSelector + '"><span>' + articleTags + '</span></a></ul>';
+      console.log(linkHTML);
+
       /* add generated code to html variable */
+
+      let html = '';
+      console.log(html);
+    }
 
     /* END LOOP: for each tag */
 
