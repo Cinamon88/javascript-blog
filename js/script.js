@@ -50,8 +50,8 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
 
-function generateTitleLinks(){
-
+function generateTitleLinks(customSelector = ''){
+  console.log(customSelector);
   /* [DONE] remove contents of titleList */
 
   const titleList = document.querySelector(optTitleListSelector);
@@ -61,11 +61,9 @@ function generateTitleLinks(){
 
   /* [DONE] for each article */
 
-  const articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log('articles', articles);
-
-  console.log(articles);
-
+  console.log(optArticleSelector + customSelector);
   let html = '';
 
   for (const article of articles){
@@ -139,7 +137,7 @@ function generateTags(){
 
       /* [DONE] generate HTML of the link */
 
-      const linkHTML = `<li><a href="${tag}"> ${tag} </a><li>`;
+      const linkHTML = `<li><a href="#tag-${tag}">${tag}</a></li>`;
 
       /* [DONE] add generated code to html variable */
 
@@ -166,7 +164,6 @@ function tagClickHandler(event){
   /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
 
   const clickedElement = this;
-  console.log(tag, 'Tag was cicked');
 
   /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
 
@@ -191,7 +188,7 @@ function tagClickHandler(event){
 
     activeTag.classList.remove('active');
 
-  /* END LOOP: for each active tag link */
+    /* END LOOP: for each active tag link */
 
   }
 
