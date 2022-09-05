@@ -99,6 +99,21 @@ function generateTitleLinks(customSelector = '') {
 
 generateTitleLinks();
 
+const calculateTagsParams = function(tags){
+  const params = {
+    max: 0,
+    min: 999999,
+  };
+
+  for (let tag in tags){
+    params.max = Math.max(tags[tag], params.max);
+    params.min = Math.min(tags[tag], params.min);
+
+    console.log(tag + ' is used ' + tags[tag] + ' times');
+  }
+  return params;
+
+};
 
 function generateTags() {
 
@@ -178,6 +193,9 @@ function generateTags() {
     console.log(allTags);
 
     /* [NEW] create variable for all links HTML code */
+
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams:', tagsParams);
 
     let allTagsHTML = ' ';
 
