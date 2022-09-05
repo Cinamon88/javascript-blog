@@ -4,6 +4,9 @@
 
 $color-light: #fff;
 $color-dark: #444;
+$color-tag-one: #2980b9;
+$color-tag-two: #e74c3c;
+$color-tag-three: #27ae60;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -95,6 +98,32 @@ body {
     display: inline-block;
     margin-right: 5px;
   }
+}
+
+.tags.list {
+  li {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 20px;
+    font-style: italic;
+  }
+}
+
+/* Tags */
+
+.tag-size-tag-size-1 {
+  font-size: 100%;
+  color: $color-tag-one;
+}
+
+.tag-size-tag-size-2 {
+  font-size: 130%;
+  color: $color-tag-three;
+}
+
+.tag-size-tag-size-3 {
+  font-size: 150%;
+  color: $color-tag-two;
 }
 
 /* Authors */
