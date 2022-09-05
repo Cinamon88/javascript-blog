@@ -83,7 +83,7 @@ function generateTitleLinks(customSelector = '') {
 
     const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
     console.log(linkHTML);
-    html = linkHTML + html;
+    html = html + linkHTML;
   }
 
   /* [DONE] insert link into titleList */
@@ -102,9 +102,9 @@ generateTitleLinks();
 
 function generateTags() {
 
-  /* [NEW] create a new variable allTags with empty array */
+  /* [NEW] create a new variable allTags with empty object */
 
-  let allTags = [];
+  let allTags = {};
 
   /* [DONE] find all articles */
 
@@ -150,11 +150,11 @@ function generateTags() {
 
       /* [NEW] check if this link is NOT already in allTags */
 
-      if(allTags.indexOf(linkHTML)== -1){
+      if(!allTags[tag]) {
 
-        /* [NEW] add generated code to allTags array */
+        /* [NEW] add tag to allTags object */
 
-        allTags.push(linkHTML);
+        allTags[tag] = 1;
       }
 
       /* END LOOP: for each tag */
